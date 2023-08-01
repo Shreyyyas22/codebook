@@ -30,6 +30,7 @@ export const ProductsList = () => {
       }
     }
     fetchProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm]); 
  
 
