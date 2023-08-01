@@ -20,6 +20,7 @@ export const ProductsList = () => {
     async function fetchProducts(){
       try{
       const data = await getProductList(searchTerm);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       initialProductList(data);
       } catch(error){
         toast.error(error.message, {
@@ -30,7 +31,7 @@ export const ProductsList = () => {
     }
     fetchProducts();
   }, [searchTerm]); 
-  // eslint-disable-next-line
+ 
 
   return (
     <main>
