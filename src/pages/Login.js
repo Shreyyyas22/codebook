@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { login } from "../services";
 import { toast } from 'react-toastify';
 import { useTitle } from "../hooks/useTitle";
-import { login } from "../services";
 
 export const Login = () => {
   useTitle("Login");
@@ -26,8 +26,8 @@ export const Login = () => {
   }
 
   async function handleLoginGuest(){
-    email.current.value = "shreyash@example.com";
-    password.current.value ="Shreyash22";
+    email.current.value = process.env.REACT_APP_GUEST_LOGIN;
+    password.current.value =process.env.REACT_APP_GUEST_PASSWORD;
     try{
     const authDetail = {
       email: email.current.value,
